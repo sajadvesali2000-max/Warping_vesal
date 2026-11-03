@@ -2300,7 +2300,7 @@
         <form class="order-form reveal" id="orderForm">
           <div class="form-heading">
             <h3 data-i18n="formTitle">فرم درخواست چله‌پیچی</h3>
-            <p data-i18n="formDescription">اطلاعات اولیه را وارد کنید تا پیام سفارش آماده شود.</p>
+            <p data-i18n="formDescription">اطلاعات درخواست را وارد کنید تا سفارش مستقیماً برای مدیر وصال ارسال شود.</p>
           </div>
 
           <div class="form-grid">
@@ -2342,12 +2342,12 @@
           </div>
 
           <button class="btn btn-primary form-submit" type="submit">
-            <span data-i18n="submitOrder">آماده‌سازی پیام سفارش</span>
+            <span data-i18n="submitOrder">ارسال مستقیم برای مدیر</span>
             <span aria-hidden="true">↗</span>
           </button>
 
-          <p class="form-help" data-i18n="formHelp">
-            پس از زدن دکمه، پیام آماده می‌شود و برای ارسال در واتساپ باز خواهد شد.
+          <p class="form-help" id="orderStatus" aria-live="polite" data-i18n="formHelp">
+            در Mini App درخواست از طریق ربات ارسال می‌شود؛ در مرورگر عادی از API امن پایتون برای مدیر فرستاده می‌شود.
           </p>
         </form>
 
@@ -2503,6 +2503,12 @@
 
     // اتصال این سایت به ربات رسمی وصال در تلگرام.
     const TELEGRAM_BOT_URL = "https://t.me/shop_handicraft_bot";
+
+    // آدرس API ربات را پس از استقرار main.py در FadeHost اینجا قرار بده.
+    // نمونه: https://YOUR-FADEHOST-DOMAIN/api/order
+    // این آدرس محرمانه نیست؛ توکن ربات را هرگز داخل HTML ننویس.
+    const ORDER_API_URL = "https://YOUR-FADEHOST-DOMAIN/api/order";
+
     const TELEGRAM_WEB_APP = window.Telegram?.WebApp || null;
 
     if (TELEGRAM_WEB_APP) {
@@ -2605,7 +2611,7 @@
         addressValue: "روستای رویین، اسفراین",
 
         formTitle: "فرم درخواست چله‌پیچی",
-        formDescription: "اطلاعات اولیه را وارد کنید تا پیام سفارش آماده شود.",
+        formDescription: "اطلاعات درخواست را وارد کنید تا سفارش مستقیماً برای مدیر وصال ارسال شود.",
         nameLabel: "نام شما",
         namePlaceholder: "نام و نام خانوادگی",
         mobileLabel: "شماره همراه",
@@ -2619,8 +2625,8 @@
         quantityPlaceholder: "مثلاً مقدار مورد نیاز",
         detailsLabel: "توضیحات سفارش",
         detailsPlaceholder: "جزئیات سفارش، اندازه یا توضیح تکمیلی...",
-        submitOrder: "ارسال درخواست سفارش",
-        formHelp: "اگر سایت را از داخل ربات تلگرام باز کرده باشی، درخواست مستقیم به ربات وصال می‌رسد؛ در مرورگر عادی واتساپ باز می‌شود.",
+        submitOrder: "ارسال مستقیم برای مدیر",
+        formHelp: "داخل Mini App درخواست از طریق ربات ارسال می‌شود؛ در مرورگر عادی از API پایتون برای مدیر وصال فرستاده می‌شود.",
 
         faqEyebrow: "پرسش‌های متداول",
         faqTitle: 'پاسخ چند پرسش <span class="gold-text">پیش از سفارش</span>',
@@ -2742,7 +2748,7 @@
         addressValue: "Royin Village, Esfarayen",
 
         formTitle: "Warping Request Form",
-        formDescription: "Enter some basic details to prepare your order message.",
+        formDescription: "Enter your details to send the request directly to Vesal.",
         nameLabel: "Your Name",
         namePlaceholder: "Full name",
         mobileLabel: "Mobile Number",
@@ -2756,8 +2762,8 @@
         quantityPlaceholder: "Enter the required amount",
         detailsLabel: "Order Details",
         detailsPlaceholder: "Order details, dimensions or other information...",
-        submitOrder: "Send Order Request",
-        formHelp: "When opened from the Telegram bot, your request is sent directly to Vesal; in a normal browser, WhatsApp opens.",
+        submitOrder: "Send Directly to Manager",
+        formHelp: "Inside Telegram Mini App, the bot receives your request. In a normal browser, the Python API sends it to the manager.",
 
         faqEyebrow: "Frequently Asked Questions",
         faqTitle: 'A few things to know <span class="gold-text">before ordering</span>',
@@ -2971,10 +2977,14 @@
 
 
     /* =========================================================
-       ثبت درخواست چله‌پیچی — Telegram Mini App + WhatsApp fallback
+       ثبت درخواست چله‌پیچی — Mini App + API پایتون در مرورگر عادی
        ========================================================= */
 
-    $("#orderForm").addEventListener("submit", event => {
+    const orderForm = $("#orderForm");
+    const orderStatus = $("#orderStatus");
+    const orderSubmitButton = $("#orderForm button[type='submit']");
+
+    orderForm.addEventListener("submit", async event => {
       event.preventDefault();
 
       const name = $("#customerName").value.trim();
@@ -2982,63 +2992,92 @@
       const yarn = $("#yarnType").value;
       const quantity = $("#quantity").value.trim();
       const details = $("#orderDetails").value.trim();
-      const t = translations[currentLanguage];
+      const isEnglish = currentLanguage === "en";
 
       if (!name || !phone || !yarn) {
-        alert(t.invalidForm);
+        alert(translations[currentLanguage].invalidForm);
         return;
       }
 
-      // When launched from the bot's Web App keyboard button,
-      // sendData delivers this request to main.py as web_app_data.
-      if (TELEGRAM_WEB_APP && TELEGRAM_WEB_APP.initData && typeof TELEGRAM_WEB_APP.sendData === "function") {
-        const requestPayload = {
-          type: "vesal_warping_order",
-          version: 1,
-          name,
-          phone,
-          yarn,
-          quantity,
-          details,
-          language: currentLanguage
-        };
+      const requestPayload = {
+        type: "vesal_warping_order",
+        version: 2,
+        name,
+        phone,
+        yarn,
+        quantity,
+        details,
+        language: currentLanguage
+      };
 
-        const serialized = JSON.stringify(requestPayload);
-        if (new Blob([serialized]).size > 3900) {
-          alert(currentLanguage === "fa"
-            ? "توضیحات سفارش بیش از حد طولانی است. لطفاً کوتاه‌تر بنویسید."
-            : "The order details are too long. Please shorten them.");
-          return;
-        }
-
-        try {
-          TELEGRAM_WEB_APP.sendData(serialized);
-          return;
-        } catch (error) {
-          console.error("Telegram WebApp sendData failed:", error);
-          alert(currentLanguage === "fa"
-            ? "ارسال به ربات تلگرام انجام نشد. لطفاً دوباره تلاش کنید."
-            : "Could not send the request to Telegram. Please try again.");
-          return;
-        }
+      const serialized = JSON.stringify(requestPayload);
+      if (new Blob([serialized]).size > 3900) {
+        alert(isEnglish
+          ? "The order details are too long. Please shorten them."
+          : "توضیحات سفارش بیش از حد طولانی است. لطفاً کوتاه‌تر بنویسید.");
+        return;
       }
 
-      // Outside Telegram, keep the existing WhatsApp order flow.
-      const lines = [
-        t.orderIntro,
-        "",
-        `${t.orderName}: ${name}`,
-        `${t.orderPhone}: ${phone}`,
-        `${t.orderYarn}: ${yarn}`,
-        quantity ? `${t.orderQuantity}: ${quantity}` : "",
-        details ? `${t.orderDetails}: ${details}` : ""
-      ].filter(Boolean);
+      const originalButtonText = orderSubmitButton.innerText;
+      orderSubmitButton.disabled = true;
+      orderSubmitButton.setAttribute("aria-busy", "true");
+      orderStatus.textContent = isEnglish ? "Sending your request…" : "در حال ارسال درخواست…";
 
-      const message = encodeURIComponent(lines.join("\n"));
-      const number = CONFIG.whatsapp.replace(/\D/g, "");
-      window.open(`https://wa.me/${number}?text=${message}`, "_blank", "noopener");
+      try {
+        // مسیر اول: سایت در Telegram Mini App واقعی باز شده است.
+        if (
+          TELEGRAM_WEB_APP &&
+          TELEGRAM_WEB_APP.initData &&
+          typeof TELEGRAM_WEB_APP.sendData === "function"
+        ) {
+          TELEGRAM_WEB_APP.sendData(serialized);
+          orderStatus.textContent = isEnglish
+            ? "Sent to the Vesal bot. Check your Telegram chat for confirmation."
+            : "درخواست به ربات وصال فرستاده شد؛ پیام تأیید را در گفت‌وگوی تلگرام ببینید.";
+          return;
+        }
+
+        // مسیر دوم: سایت در مرورگر عادی باز شده است؛ سفارش به API پایتون می‌رود.
+        if (!ORDER_API_URL || ORDER_API_URL.includes("YOUR-FADEHOST-DOMAIN")) {
+          throw new Error(isEnglish
+            ? "The Python API address has not been configured yet."
+            : "آدرس API پایتون هنوز در تنظیمات سایت وارد نشده است.");
+        }
+
+        const response = await fetch(ORDER_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: serialized
+        });
+
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.ok) {
+          throw new Error(result.message || (isEnglish
+            ? "The request could not be delivered."
+            : "ارسال درخواست انجام نشد."));
+        }
+
+        orderStatus.textContent = isEnglish
+          ? `Your request was sent to the manager. Tracking code: ${result.order_code}`
+          : `درخواست با موفقیت برای مدیر وصال ارسال شد. کد پیگیری: ${result.order_code}`;
+        alert(orderStatus.textContent);
+        orderForm.reset();
+
+      } catch (error) {
+        console.error("Vesal order submission failed:", error);
+        const message = error && error.message ? error.message : "ارسال سفارش ناموفق بود.";
+        orderStatus.textContent = message;
+        alert(
+          message + (isEnglish
+            ? " Open the Vesal Telegram bot and use the 'Register Order in Chat' button."
+            : "\nبرای ثبت سفارش، ربات تلگرام وصال را باز کنید و دکمهٔ «ثبت سفارش در چت» را بزنید.")
+        );
+      } finally {
+        orderSubmitButton.disabled = false;
+        orderSubmitButton.removeAttribute("aria-busy");
+        if (!orderStatus.textContent) orderSubmitButton.innerText = originalButtonText;
+      }
     });
-
 
     /* =========================================================
        گالری و نمایش بزرگ تصاویر
