@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#11151d">
+  <meta name="description" content="وصال؛ خدمات چله‌پیچی نخ نخی و مخمل در روستای رویین، اسفراین، خراسان شمالی.">
+  <title>وصال | خدمات چله‌پیچی</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       VESAL — WARPING STUDIO
+       تک فایل HTML | فارسی و انگلیسی | روشن و تاریک | موبایل‌محور
+       ========================================================= */
+
+    :root {
+      --gold: #d5a66c;
+      --gold-light: #f0cf9f;
+      --copper: #b87552;
+      --green: #7b9181;
+      --danger: #bd655f;
+      --radius-xl:  thirty;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #11151d;
+      --bg-soft: #171d27;
+      --surface: #1b2330;
+      --surface-2: #222c3b;
+      --surface-glass: rgba(25, 32, 44, .78);
+      --text: #f4efe8;
+      --muted: #b3b3b4;
+      --subtle: #7f8995;
+      --line: rgba(255,255,255,.10);
+      --line-strong: rgba(255,255,255,.17);
+      --header: rgba(17,21,29,.82);
+      --shadow: 0 24px 75px rgba(0,0,0,.28);
+      --hero-overlay: linear-gradient(90deg, rgba(17,21,29,.98) 0%, rgba(17,21,29,.88) 42%, rgba(17,21,29,.25) 100%);
+      --card-glow: rgba(213,166,108,.08);
+    }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f5f0e8;
+      --bg-soft: #eee7dc;
+      --surface: #fffdf9;
+      --surface-2: #f4ede3;
+      --surface-glass: rgba(255,253,249,.84);
+      --text: #26241f;
+      --muted: #69645d;
+      --subtle: #898078;
+      --line: rgba(50,40,25,.10);
+      --line-strong: rgba(50,40,25,.17);
+      --header: rgba(245,240,232,.86);
+      --shadow: 0 24px 65px rgba(75,55,25,.10);
+      --hero-overlay: linear-gradient(90deg, rgba(245,240,232,.98) 0%, rgba(245,240,232,.90) 42%, rgba(245,240,232,.18) 100%);
+      --card-glow: rgba(184,117,82,.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 10% 10%, var(--card-glow), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "Vazirmatn", sans-serif;
+      line-height: 1.85;
+      overflow-x: hidden;
+      transition: background .3s, color .3s;
+    }
+
+    body, button, input, textarea, select {
+      font-family: "Vazirmatn", sans-serif;
+    }
+
+    button, a, input, textarea {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding-block: 105px;
+    }
+
+    .section-heading {
+      max-width: 690px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      margin-bottom: 15px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.35;
+      font-weight: 900;
+      letter-spacing: -.045em;
+    }
+
+    .section-description {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-top: 15px;
+      line-height: 2.1;
+    }
+
+    .gold-text {
+      color: var(--gold);
+    }
+
+    .english {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: .02em;
+    }
+
+    .btn {
+      min-height: 52px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      padding: 12px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: .92rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .25s, background .25s, border-color .25s, box-shadow .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #e0b77f, #b97a54);
+      color: #1b1b1b;
+      box-shadow: 0 12px 30px rgba(184,117,82,.20);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 16px 36px rgba(184,117,82,.32);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: var(--surface-glass);
+      border-color: var(--line-strong);
+      backdrop-filter: blur(12px);
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 13px;
+      display: inline-grid;
+      place-items: center;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .icon-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .icon-btn svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: var(--header);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-symbol {
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #231b15;
+      background: linear-gradient(145deg, var(--gold-light), var(--copper));
+      box-shadow: 0 7px 22px rgba(184,117,82,.2);
+    }
+
+    .brand-symbol svg {
+      width: 25px;
+      height: 25px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .brand-name {
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .brand-caption {
+      display: block;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .main-nav a {
+      position: relative;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -8px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width .25s;
+    }
+
+    .main-nav a:hover {
+      color: var(--text);
+    }
+
+    .main-nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .language-button {
+      min-width: 48px;
+      height: 44px;
+      padding-inline: 11px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: .78rem;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .language-button:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .header-contact {
+      min-height: 44px;
+      padding: 9px 16px;
+      font-size: .82rem;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      min-height: 770px;
+      padding-top: 82px;
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 82px 0 0;
+      z-index: -2;
+      background:
+        url("https://www.shirinpersia.com/files/getbyid/img-3869-2-copy%2C739.jpg")
+        center 46% / cover no-repeat;
+      filter: saturate(.83);
+      transform: scale(1.025);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 82px 0 0;
+      z-index: -1;
+      background: var(--hero-overlay);
+    }
+
+    .hero-content {
+      width: min(700px, 68%);
+      padding-block: 100px;
+    }
+
+    .hero-badge {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid rgba(213,166,108,.35);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(20,20,20,.28);
+      backdrop-filter: blur(12px);
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 27px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #8ec49b;
+      box-shadow: 0 0 0 5px rgba(142,196,155,.12);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      color: #fffaf2;
+      font-size: clamp(2.7rem, 6.7vw, 5.7rem);
+      font-weight: 900;
+      letter-spacing: -.055em;
+      line-height: 1.27;
+      text-shadow: 0 5px 35px rgba(0,0,0,.22);
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-description {
+      max-width: 580px;
+      color: rgba(255,250,242,.83);
+      font-size: 1.05rem;
+      line-height: 2.15;
+      margin-top: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 34px;
+    }
+
+    .hero .btn-secondary {
+      color: #fff;
+      background: rgba(20,20,20,.30);
+      border-color: rgba(255,255,255,.28);
+    }
+
+    .hero-bottom-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 55px;
+      color: rgba(255,255,255,.77);
+      font-size: .78rem;
+    }
+
+    .hero-bottom-note::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-side-card {
+      position: absolute;
+      bottom: 54px;
+      inset-inline-end: max(24px, calc((100vw - 1160px) / 2));
+      width: 255px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 20px;
+      color: white;
+      background: rgba(24,28,33,.42);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-side-card strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 1.3rem;
+      margin-bottom: 3px;
+    }
+
+    .hero-side-card span {
+      display: block;
+      color: rgba(255,255,255,.78);
+      font-size: .79rem;
+    }
+
+    /* ---------- Trust strip ---------- */
+
+    .trust-strip {
+      position: relative;
+      z-index: 2;
+      margin-top: -1px;
+      background: var(--surface);
+      border-block: 1px solid var(--line);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item {
+      min-height: 112px;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-inline-start: 1px solid var(--line);
+    }
+
+    .trust-item:first-child {
+      border-inline-start: 0;
+    }
+
+    .trust-icon {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--gold);
+      background: var(--surface-2);
+      font-size: 1.35rem;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: .93rem;
+      font-weight: 800;
+    }
+
+    .trust-item small {
+      display: block;
+      color: var(--muted);
+      font-size: .75rem;
+      margin-top: 3px;
+    }
+
+    /* ---------- About ---------- */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .about-image {
+      position: absolute;
+      inset: 0 0 0 45px;
+      width: calc(100% - 45px);
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image-frame {
+      position: absolute;
+      inset: 25px 25px -17px -17px;
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      opacity: .55;
+      pointer-events: none;
+    }
+
+    .about-stamp {
+      position: absolute;
+      bottom: 28px;
+      inset-inline-start: -12px;
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #241d17;
+      background: linear-gradient(145deg, var(--gold-light), var(--copper));
+      border: 8px solid var(--bg);
+      box-shadow: var(--shadow);
+      transform: rotate(-9deg);
+    }
+
+    .about-stamp strong {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .about-stamp small {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      line-height: 2.15;
+      margin-top: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--surface);
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .check-mark {
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #1c241d;
+      background: #a9c09e;
+      font-size: .75rem;
+      font-weight: 900;
+    }
+
+    /* ---------- Services ---------- */
+
+    .services-section {
+      background:
+        radial-gradient(circle at 85% 20%, var(--card-glow), transparent 24rem),
+        var(--bg-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 23px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 340px;
+      overflow: hidden;
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: transform .3s, border-color .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(213,166,108,.55);
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      inset: auto -55px -100px auto;
+      border-radius: 50%;
+      background: var(--card-glow);
+      pointer-events: none;
+    }
+
+    .service-number {
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .service-icon {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(213,166,108,.3);
+      border-radius: 18px;
+      color: var(--gold);
+      background: var(--surface-2);
+      font-size: 1.8rem;
+      margin-block: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 11px;
+    }
+
+    .service-card p {
+      max-width: 480px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 2.1;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 23px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      color: var(--gold);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    /* ---------- Process ---------- */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: process;
+    }
+
+    .process-step {
+      position: relative;
+      min-height: 245px;
+      padding: 25px 21px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: var(--surface);
+      counter-increment: process;
+    }
+
+    .process-step::before {
+      content: "0" counter(process);
+      display: block;
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 22px;
+    }
+
+    .process-step h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 9px;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 2;
+    }
+
+    .process-explainer {
+      margin-top: 28px;
+      padding: 25px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      border: 1px solid rgba(213,166,108,.28);
+      border-radius: 18px;
+      background: var(--card-glow);
+    }
+
+    .process-explainer-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--gold);
+      background: var(--surface);
+      font-size: 1.3rem;
+    }
+
+    .process-explainer p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 2.15;
+    }
+
+    .process-explainer strong {
+      color: var(--text);
+    }
+
+    /* ---------- Gallery ---------- */
+
+    .gallery-section {
+      background: var(--bg-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .gallery-topline {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 37px;
+    }
+
+    .gallery-topline .section-heading {
+      margin-bottom: 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .85fr .85fr;
+      grid-template-rows: 245px 245px;
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      cursor: zoom-in;
+      isolation: isolate;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.075);
+      filter: saturate(1.12);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 35% 0 0;
+      z-index: 1;
+      background: linear-gradient(transparent, rgba(0,0,0,.72));
+      pointer-events: none;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      z-index: 2;
+      inset: auto 18px 15px;
+      color: white;
+      font-size: .83rem;
+      font-weight: 800;
+      text-shadow: 0 2px 10px rgba(0,0,0,.45);
+    }
+
+    .gallery-note {
+      color: var(--muted);
+      font-size: .75rem;
+      margin-top: 18px;
+      line-height: 1.9;
+    }
+
+    /* ---------- Order / Contact ---------- */
+
+    .order-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-section::before {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      inset: -150px auto auto -160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--card-glow), transparent 68%);
+      pointer-events: none;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-intro p {
+      color: var(--muted);
+      line-height: 2.15;
+      margin-top: 18px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--surface);
+    }
+
+    .contact-row-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: var(--gold);
+      background: var(--surface-2);
+      font-size: 1.2rem;
+    }
+
+    .contact-row small {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .contact-row strong {
+      display: block;
+      direction: ltr;
+      text-align: start;
+      font-size: .92rem;
+      margin-top: 2px;
+    }
+
+    .order-form {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .form-heading {
+      margin-bottom: 24px;
+    }
+
+    .form-heading h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+
+    .form-heading p {
+      color: var(--muted);
+      font-size: .8rem;
+      margin-top: 7px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 51px;
+      outline: none;
+      color: var(--text);
+      background: var(--bg-soft);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: .86rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .field textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(213,166,108,.12);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: var(--subtle);
+    }
+
+    .field select option {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .form-help {
+      color: var(--subtle);
+      font-size: .7rem;
+      text-align: center;
+      margin-top: 11px;
+    }
+
+    /* ---------- FAQ ---------- */
+
+    .faq-section {
+      background: var(--bg-soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 55px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-list details {
+      padding: 18px 21px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--surface);
+    }
+
+    .faq-list summary {
+      position: relative;
+      cursor: pointer;
+      list-style: none;
+      padding-inline-end: 29px;
+      font-size: .9rem;
+      font-weight: 800;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::before {
+      content: "+";
+      position: absolute;
+      inset-inline-end: 0;
+      top: -4px;
+      color: var(--gold);
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    .faq-list details[open] summary::before {
+      content: "−";
+    }
+
+    .faq-list details p {
+      color: var(--muted);
+      font-size: .83rem;
+      line-height: 2.1;
+      padding-top: 13px;
+    }
+
+    /* ---------- Social / Footer ---------- */
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--muted);
+      background: var(--surface);
+      font-size: .8rem;
+      font-weight: 900;
+      transition: .2s;
+    }
+
+    .social-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .footer {
+      padding: 55px 0 25px;
+      background: #0c1017;
+      color: #f4efe8;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 55px;
+      padding-bottom: 40px;
+    }
+
+    .footer .brand-caption {
+      color: #aaa39a;
+    }
+
+    .footer-about {
+      max-width: 390px;
+      color: #aaa39a;
+      font-size: .82rem;
+      line-height: 2.1;
+      margin-top: 18px;
+    }
+
+    .footer h4 {
+      color: var(--gold-light);
+      font-size: .95rem;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      width: fit-content;
+      color: #bcb8b1;
+      font-size: .82rem;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #88857f;
+      font-size: .72rem;
+    }
+
+    /* ---------- Mobile bottom navigation ---------- */
+
+    .mobile-dock {
+      display: none;
+    }
+
+    /* ---------- Lightbox ---------- */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      place-items: center;
+      padding: 25px;
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(12px);
+    }
+
+    .lightbox.open {
+      display: grid;
+    }
+
+    .lightbox img {
+      max-width: min(100%, 1050px);
+      max-height: 84vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 25px 80px rgba(0,0,0,.4);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      inset-inline-end: 20px;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      color: white;
+      background: rgba(255,255,255,.1);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ---------- Reveal animation ---------- */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- English layout ---------- */
+
+    html[lang="en"] body {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    html[lang="en"] .brand-name,
+    html[lang="en"] .section-title,
+    html[lang="en"] .hero h1,
+    html[lang="en"] .service-card h3,
+    html[lang="en"] .process-step h3,
+    html[lang="en"] .form-heading h3,
+    html[lang="en"] .faq-list summary,
+    html[lang="en"] .footer h4 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    html[lang="en"] .brand-caption,
+    html[lang="en"] .main-nav,
+    html[lang="en"] .btn,
+    html[lang="en"] .hero-badge,
+    html[lang="en"] .trust-item,
+    html[lang="en"] .service-card p,
+    html[lang="en"] .process-step p,
+    html[lang="en"] .field,
+    html[lang="en"] .faq-list details p,
+    html[lang="en"] .footer-about,
+    html[lang="en"] .footer-links,
+    html[lang="en"] .footer-bottom,
+    html[lang="en"] .section-description,
+    html[lang="en"] .about-copy p,
+    html[lang="en"] .contact-intro p,
+    html[lang="en"] .gallery-note,
+    html[lang="en"] .process-explainer p {
+      font-family: Arial, sans-serif;
+    }
+
+    html[lang="en"] .contact-row strong {
+      text-align: start;
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 1000px) {
+      .main-nav {
+        gap: 17px;
+      }
+
+      .main-nav a {
+        font-size: .79rem;
+      }
+
+      .hero-side-card {
+        display: none;
+      }
+
+      .about-grid {
+        gap: 45px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-rows: 210px 210px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      body {
+        padding-bottom: calc(76px + env(safe-area-inset-bottom));
+      }
+
+      .container {
+        width: min(100% - 34px, 600px);
+      }
+
+      .section {
+        padding-block: 70px;
+      }
+
+      .section-heading {
+        margin-bottom: 29px;
+      }
+
+      .section-title {
+        font-size: clamp(1.8rem, 8vw, 2.55rem);
+      }
+
+      .section-description {
+        font-size: .91rem;
+      }
+
+      .site-header {
+        position: sticky;
+      }
+
+      .header-inner {
+        min-height: 70px;
+        gap: 10px;
+      }
+
+      .brand-symbol {
+        width: 39px;
+        height: 39px;
+        border-radius: 12px;
+      }
+
+      .brand-name {
+        font-size: 1.23rem;
+      }
+
+      .brand-caption {
+        font-size: .6rem;
+      }
+
+      .header-actions {
+        gap: 7px;
+      }
+
+      .header-contact {
+        display: none;
+      }
+
+      .icon-btn {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        border-radius: 12px;
+      }
+
+      .language-button {
+        height: 40px;
+        min-width: 43px;
+        border-radius: 12px;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+      }
+
+      .main-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        inset-inline: 0;
+        padding: 12px 18px 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--header);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(20px);
+      }
+
+      .main-nav.show {
+        display: flex;
+      }
+
+      .main-nav a {
+        padding: 12px 5px;
+        font-size: .9rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .main-nav a::after {
+        display: none;
+      }
+
+      .hero {
+        min-height: 690px;
+        padding-top: 0;
+        align-items: end;
+      }
+
+      .hero::before {
+        inset: 0;
+        background-position: 56% center;
+      }
+
+      .hero::after {
+        inset: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(12,15,21,.98) 0%,
+          rgba(12,15,21,.86) 42%,
+          rgba(12,15,21,.26) 100%
+        );
+      }
+
+      .hero-content {
+        width: 100%;
+        padding-block: 100px 55px;
+      }
+
+      .hero-badge {
+        font-size: .7rem;
+        margin-bottom: 21px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+        line-height: 1.28;
+      }
+
+      .hero-description {
+        font-size: .91rem;
+        line-height: 2.05;
+        margin-top: 17px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 25px;
+      }
+
+      .hero-actions .btn {
+        min-height: 51px;
+        padding-inline: 10px;
+        font-size: .82rem;
+      }
+
+      .hero-bottom-note {
+        margin-top: 31px;
+        font-size: .7rem;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        padding-block: 8px;
+      }
+
+      .trust-item {
+        min-height: 75px;
+        justify-content: flex-start;
+        padding: 12px 4px;
+        border-inline-start: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .trust-icon {
+        width: 41px;
+        height: 41px;
+        flex-basis: 41px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 43px;
+      }
+
+      .about-image-wrap {
+        min-height: 365px;
+        margin-inline: 10px;
+      }
+
+      .about-image {
+        inset-inline-start: 25px;
+        inset-inline-end: 0;
+        width: calc(100% - 25px);
+      }
+
+      .about-image-frame {
+        inset: 15px 15px -10px -10px;
+      }
+
+      .about-stamp {
+        width: 112px;
+        height: 112px;
+        bottom: 17px;
+        inset-inline-start: -8px;
+        border-width: 6px;
+      }
+
+      .about-stamp strong {
+        font-size: .85rem;
+      }
+
+      .about-stamp small {
+        font-size: .58rem;
+      }
+
+      .about-copy p {
+        font-size: .9rem;
+      }
+
+      .about-points {
+        gap: 9px;
+      }
+
+      .about-point {
+        padding: 10px 8px;
+        font-size: .72rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .service-card {
+        min-height: auto;
+        padding: 25px;
+        border-radius: 18px;
+      }
+
+      .service-number {
+        font-size: 2.8rem;
+      }
+
+      .service-icon {
+        width: 54px;
+        height: 54px;
+        margin-block: 16px;
+      }
+
+      .service-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .service-card p {
+        font-size: .84rem;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .process-step {
+        min-height: 215px;
+        padding: 18px 15px;
+        border-radius: 15px;
+      }
+
+      .process-step::before {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .process-step h3 {
+        font-size: .88rem;
+      }
+
+      .process-step p {
+        font-size: .74rem;
+      }
+
+      .process-explainer {
+        padding: 17px;
+        gap: 12px;
+      }
+
+      .process-explainer p {
+        font-size: .79rem;
+      }
+
+      .gallery-topline {
+        display: block;
+      }
+
+      .gallery-topline .btn {
+        margin-top: 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 255px 155px 155px;
+        gap: 9px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .gallery-item {
+        border-radius: 13px;
+      }
+
+      .gallery-caption {
+        inset-inline: 10px;
+        bottom: 10px;
+        font-size: .7rem;
+      }
+
+      .gallery-note {
+        font-size: .68rem;
+      }
+
+      .order-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .contact-intro p {
+        font-size: .88rem;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+      }
+
+      .contact-row {
+        padding: 11px 9px;
+        gap: 8px;
+      }
+
+      .contact-row-icon {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+        font-size: 1rem;
+      }
+
+      .contact-row small {
+        font-size: .62rem;
+      }
+
+      .contact-row strong {
+        font-size: .76rem;
+      }
+
+      .order-form {
+        padding: 21px 16px;
+        border-radius: 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        min-height: 50px;
+        font-size: 16px;
+      }
+
+      .field textarea {
+        min-height: 105px;
+      }
+
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .faq-list details {
+        padding: 15px;
+      }
+
+      .faq-list summary {
+        font-size: .82rem;
+      }
+
+      .footer {
+        padding-top: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 22px;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-about {
+        max-width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+      }
+
+      .mobile-dock {
+        position: fixed;
+        z-index: 1100;
+        inset: auto 0 0;
+        min-height: calc(67px + env(safe-area-inset-bottom));
+        padding: 7px 10px calc(7px + env(safe-area-inset-bottom));
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        background: var(--header);
+        border-top: 1px solid var(--line);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      .dock-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        border: 0;
+        border-radius: 12px;
+        color: var(--muted);
+        background: transparent;
+        font-size: .63rem;
+        font-weight: 700;
+      }
+
+      .dock-item span:first-child {
+        font-size: 1.15rem;
+        line-height: 1.2;
+      }
+
+      .dock-item:active,
+      .dock-item:hover {
+        color: var(--gold);
+        background: var(--surface-2);
+      }
+
+      html[lang="en"] .dock-item {
+        font-family: Arial, sans-serif;
+        font-size: .62rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        width: calc(100% - 26px);
+      }
+
+      .hero h1 {
+        font-size: 2.45rem;
+      }
+
+      .hero-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-details {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-rows: 220px 135px 135px;
+      }
+
+      .process-step {
+        min-height: 235px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid > div:first-child {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="#home" aria-label="Vesal home">
+        <span class="brand-symbol">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 8h22M5 16h22M5 24h22"></path>
+            <path d="M9 5v22M16 5v22M23 5v22"></path>
+            <path d="M5 8l4 4 7-8 7 8 4-4"></path>
+          </svg>
+        </span>
+        <span>
+          <span class="brand-name">وصال</span>
+          <span class="brand-caption" data-i18n="brandCaption">خدمات تخصصی چله‌پیچی</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" data-i18n="navHome">خانه</a>
+        <a href="#about" data-i18n="navAbout">درباره ما</a>
+        <a href="#services" data-i18n="navServices">خدمات</a>
+        <a href="#process" data-i18n="navProcess">مراحل کار</a>
+        <a href="#gallery" data-i18n="navGallery">گالری</a>
+        <a href="#contact" data-i18n="navContact">ارتباط</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="language-button" id="languageToggle" type="button" aria-label="Change language">EN</button>
+
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Change theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+        </button>
+
+        <a class="btn btn-primary header-contact" href="#contact" data-i18n="headerOrder">ثبت سفارش</a>
+
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-badge">
+            <span class="live-dot"></span>
+            <span data-i18n="heroBadge">چله‌پیچی در روستای رویین، اسفراین</span>
+          </div>
+
+          <h1 data-i18n="heroTitle">
+            آغاز یک بافت زیبا،
+            <span>از چله‌ای منظم</span>
+          </h1>
+
+          <p class="hero-description" data-i18n="heroDescription">
+            در وصال، چله‌پیچی نخ‌های نخی و مخمل با توجه به مشخصات سفارش شما انجام می‌شود؛
+            با تمرکز بر نظم نخ‌ها، کشش مناسب و آماده‌سازی دقیق برای مرحله بافت.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">
+              <span data-i18n="heroCta">سفارش چله‌پیچی</span>
+              <span aria-hidden="true">←</span>
+            </a>
+            <a class="btn btn-secondary" href="#process">
+              <span data-i18n="heroMore">آشنایی با مراحل کار</span>
+            </a>
+          </div>
+
+          <div class="hero-bottom-note" data-i18n="heroBottom">
+            همراه شما از آماده‌سازی نخ تا تحویل چله
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side-card">
+        <strong data-i18n="heroCardTitle">وصال؛ از رویین</strong>
+        <span data-i18n="heroCardText">خدمات چله‌پیچی برای فعالان حوزه حوله‌بافی</span>
+      </div>
+    </section>
+
+    <!-- ================= TRUST STRIP ================= -->
+    <section class="trust-strip" aria-label="Service highlights">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <span class="trust-icon">⌁</span>
+          <span>
+            <strong data-i18n="trustOneTitle">نخ نخی و مخمل</strong>
+            <small data-i18n="trustOneText">پذیرش سفارش با دو نوع نخ</small>
+          </span>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">◎</span>
+          <span>
+            <strong data-i18n="trustTwoTitle">توجه به جزئیات</strong>
+            <small data-i18n="trustTwoText">نظم نخ‌ها و کنترل کشش</small>
+          </span>
+        </div>
+
+        <div class="trust-item">
+          <span class="trust-icon">⌖</span>
+          <span>
+            <strong data-i18n="trustThreeTitle">روستای رویین</strong>
+            <small data-i18n="trustThreeText">اسفراین، خراسان شمالی</small>
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-image-wrap reveal">
+          <img
+            class="about-image"
+            src="https://en.ifilmtv.ir/UploadedFiles/Images/16-02-2023/15_41_19photo_2023-02-16_12-51-18%283%29.jpg"
+            alt="Traditional weaving loom and warp threads"
+            loading="lazy">
+          <div class="about-image-frame"></div>
+
+          <div class="about-stamp">
+            <div>
+              <strong data-i18n="stampTitle">هنرِ نظم</strong>
+              <small data-i18n="stampText">پیش از بافت</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow" data-i18n="aboutEyebrow">درباره وصال</span>
+
+          <h2 class="section-title" data-i18n="aboutTitle">
+            هر بافت خوب،
+            <span class="gold-text">از آماده‌سازی درست</span>
+            شروع می‌شود.
+          </h2>
+
+          <p data-i18n="aboutText">
+            وصال در روستای رویینِ اسفراین فعالیت می‌کند و خدمات چله‌پیچی را برای
+            افرادی ارائه می‌دهد که دستگاه حوله‌بافی دارند. هدف ما آماده‌سازی
+            منظم نخ‌ها و هماهنگی دقیق سفارش، پیش از شروع مرحله بافت است.
+          </p>
+
+          <p data-i18n="aboutTextTwo">
+            نوع نخ، مقدار مورد نیاز و جزئیات کار پیش از شروع با شما هماهنگ می‌شود
+            تا سفارش بر اساس نیازتان آماده شود.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point">
+              <span class="check-mark">✓</span>
+              <span data-i18n="aboutPointOne">هماهنگی پیش از شروع کار</span>
+            </div>
+            <div class="about-point">
+              <span class="check-mark">✓</span>
+              <span data-i18n="aboutPointTwo">توجه به نظم و کشش نخ</span>
+            </div>
+            <div class="about-point">
+              <span class="check-mark">✓</span>
+              <span data-i18n="aboutPointThree">پذیرش نخ نخی</span>
+            </div>
+            <div class="about-point">
+              <span class="check-mark">✓</span>
+              <span data-i18n="aboutPointFour">پذیرش نخ مخمل</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section services-section" id="services">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow" data-i18n="servicesEyebrow">خدمات وصال</span>
+          <h2 class="section-title" data-i18n="servicesTitle">
+            چله‌پیچی متناسب با <span class="gold-text">نوع نخ شما</span>
+          </h2>
+          <p class="section-description" data-i18n="servicesDescription">
+            در حال حاضر خدمات چله‌پیچی برای نخ‌های نخی و مخمل ارائه می‌شود.
+            جزئیات هر سفارش پیش از شروع هماهنگ خواهد شد.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-number">01</div>
+            <div class="service-icon">✳</div>
+            <h3 data-i18n="cottonTitle">چله‌پیچی نخ نخی</h3>
+            <p data-i18n="cottonText">
+              آماده‌سازی چله با نخ نخی بر اساس مقدار، طول و مشخصات اعلام‌شده
+              در سفارش؛ با توجه به قرارگیری منظم نخ‌های تار.
+            </p>
+            <span class="service-tag">
+              <span>●</span>
+              <span data-i18n="cottonTag">مناسب سفارش‌های نخ نخی</span>
+            </span>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">02</div>
+            <div class="service-icon">❋</div>
+            <h3 data-i18n="velvetTitle">چله‌پیچی نخ مخمل</h3>
+            <p data-i18n="velvetText">
+              آماده‌سازی چله با نخ مخمل و توجه به مشخصات نخ و سفارش،
+              برای تحویل چله‌ای آماده جهت ادامه مراحل بافت.
+            </p>
+            <span class="service-tag">
+              <span>●</span>
+              <span data-i18n="velvetTag">مناسب سفارش‌های نخ مخمل</span>
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="section" id="process">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow" data-i18n="processEyebrow">از نخ تا چله آماده</span>
+          <h2 class="section-title" data-i18n="processTitle">
+            چله‌پیچی <span class="gold-text">چطور انجام می‌شود؟</span>
+          </h2>
+          <p class="section-description" data-i18n="processDescription">
+            چله، مجموعه نخ‌های طولی و موازی است که پایه و زیرساخت بافت را تشکیل می‌دهد.
+            آماده‌سازی درست آن، پیش از شروع بافت اهمیت زیادی دارد.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-step reveal">
+            <h3 data-i18n="stepOneTitle">بررسی سفارش و نخ</h3>
+            <p data-i18n="stepOneText">
+              نوع نخ، مقدار، طول و مشخصات مورد نیاز با سفارش‌دهنده هماهنگ می‌شود.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3 data-i18n="stepTwoTitle">آماده‌سازی نخ‌ها</h3>
+            <p data-i18n="stepTwoText">
+              نخ‌ها برای قرار گرفتن در مسیر چله آماده و وضعیت آن‌ها بررسی می‌شود.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3 data-i18n="stepThreeTitle">تنظیم و نظم‌دهی</h3>
+            <p data-i18n="stepThreeText">
+              نخ‌های تار به‌صورت موازی و منظم چیده می‌شوند و کشش آن‌ها کنترل می‌شود.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <h3 data-i18n="stepFourTitle">پیچیدن و تحویل</h3>
+            <p data-i18n="stepFourText">
+              چله روی نورد پیچیده و برای ادامه مراحل نصب و بافت آماده می‌شود.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="process-explainer reveal">
+          <span class="process-explainer-icon">ⓘ</span>
+          <p data-i18n="processExtra">
+            <strong>چله دقیقاً چه کاری انجام می‌دهد؟</strong>
+            نخ‌های چله همان نخ‌های طولی پارچه هستند. هنگام بافت، نخ‌های پود از میان
+            آن‌ها عبور می‌کنند و پارچه شکل می‌گیرد. به همین دلیل، موازی بودن نخ‌ها،
+            نظم قرارگیری و کشش مناسب در آماده‌سازی چله اهمیت دارد.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+
+        <div class="gallery-topline">
+          <div class="section-heading reveal">
+            <span class="eyebrow" data-i18n="galleryEyebrow">دنیای نخ و بافت</span>
+            <h2 class="section-title" data-i18n="galleryTitle">
+              جزئیات زیبای <span class="gold-text">هنر نساجی</span>
+            </h2>
+            <p class="section-description" data-i18n="galleryDescription">
+              نگاهی به فضای بافت، تارهای کشیده‌شده و رنگ‌های چشم‌نواز نخ‌ها.
+            </p>
+          </div>
+
+          <a class="btn btn-secondary" href="#contact" data-i18n="galleryCta">برای سفارش با ما تماس بگیرید</a>
+        </div>
+
+        <div class="gallery-grid">
+
+          <button class="gallery-item" type="button" data-full="https://www.shirinpersia.com/files/getbyid/img-3869-2-copy%2C739.jpg" aria-label="Open weaving image">
+            <img
+              src="https://www.shirinpersia.com/files/getbyid/img-3869-2-copy%2C739.jpg"
+              alt="Weaver working with colorful threads on a loom"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="galleryOne">هنر دست و تارهای رنگی</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-full="https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg" aria-label="Open towel image">
+            <img
+              src="https://visitiran.ir/visitPic/de2e_standard/public/2019-07/1-0.jpg"
+              alt="Traditional handwoven towels"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="galleryTwo">بافت حوله‌های سنتی</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-full="https://images.squarespace-cdn.com/content/v1/67f5d3c8e1507762e95ea8e4/62a687d7-cb76-4f8d-a7e4-ead19651a272/8-4-cotton-cone-weaving-yarn%2B%282%29.jpg" aria-label="Open yarn image">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/67f5d3c8e1507762e95ea8e4/62a687d7-cb76-4f8d-a7e4-ead19651a272/8-4-cotton-cone-weaving-yarn%2B%282%29.jpg"
+              alt="Colorful cotton weaving yarn cones"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="galleryThree">رنگ‌های متنوع نخ</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-full="https://dehbazar.ir/wp-content/uploads/2019/05/%D8%B4%D8%B9%D8%B1%D8%A8%D8%A7%D9%81%DB%8C-2.jpg" aria-label="Open loom image">
+            <img
+              src="https://dehbazar.ir/wp-content/uploads/2019/05/%D8%B4%D8%B9%D8%B1%D8%A8%D8%A7%D9%81%DB%8C-2.jpg"
+              alt="Traditional loom and textile weaving"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="galleryFour">دقت در فرایند بافت</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-full="https://www.atelierorea.com/cdn/shop/files/atelier-orea-handwoven-turkish-cotton-towel-sustainable-multi-color-stripe-set.png?v=1775395826%26width=1445" aria-label="Open textile image">
+            <img
+              src="https://www.atelierorea.com/cdn/shop/files/atelier-orea-handwoven-turkish-cotton-towel-sustainable-multi-color-stripe-set.png?v=1775395826&width=1445"
+              alt="Folded handwoven striped cotton towels"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="galleryFive">بافت و نقش پارچه</span>
+          </button>
+
+          <button class="gallery-item" type="button" data-full="https://threadcollective.com.au/cdn/shop/products/ashfordunmercerisedcottton.png?v=1680230767" aria-label="Open yarn collection">
+            <img
+              src="https://threadcollective.com.au/cdn/shop/products/ashfordunmercerisedcottton.png?v=1680230767"
+              alt="Colorful cotton yarn cones"
+              loading="lazy">
+            <span class="gallery-caption" data-i18n="gallerySix">تنوع رنگ و جنس نخ</span>
+          </button>
+
+        </div>
+
+        <p class="gallery-note" data-i18n="galleryNote">
+          توجه: این تصاویر برای نمایش فضای کلی نساجی و بافت انتخاب شده‌اند و عکس اختصاصی کارگاه وصال نیستند.
+          برای معرفی دقیق‌تر کارگاه، بهتر است در آینده عکس‌های واقعی محل کار و نمونه سفارش‌ها جایگزین شوند.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ================= ORDER / CONTACT ================= -->
+    <section class="section order-section" id="contact">
+      <div class="container order-grid">
+
+        <div class="contact-intro reveal">
+          <span class="eyebrow" data-i18n="contactEyebrow">ارتباط با وصال</span>
+          <h2 class="section-title" data-i18n="contactTitle">
+            برای شروع یک همکاری،
+            <span class="gold-text">با ما در تماس باشید.</span>
+          </h2>
+
+          <p data-i18n="contactDescription">
+            نوع نخ و مشخصات سفارش خود را ارسال کنید تا برای هماهنگی جزئیات
+            چله‌پیچی با شما ارتباط بگیریم.
+          </p>
+
+          <div class="contact-details">
+
+            <a class="contact-row" id="phoneLink" href="tel:09155764756">
+              <span class="contact-row-icon">☎</span>
+              <span>
+                <small data-i18n="phoneLabel">شماره تماس</small>
+                <strong id="phoneText">09155764756</strong>
+              </span>
+            </a>
+
+            <a class="contact-row" id="smsLink" href="sms:09155764756">
+              <span class="contact-row-icon">✉</span>
+              <span>
+                <small data-i18n="smsLabel">ارسال پیامک</small>
+                <strong data-i18n="smsValue">ارسال پیام</strong>
+              </span>
+            </a>
+
+            <a class="contact-row" id="whatsappLink" href="https://wa.me/989155764756" target="_blank" rel="noopener">
+              <span class="contact-row-icon">◉</span>
+              <span>
+                <small>WhatsApp</small>
+                <strong data-i18n="whatsappValue">گفت‌وگو در واتساپ</strong>
+              </span>
+            </a>
+
+            <a class="contact-row" href="https://www.google.com/maps/search/?api=1&query=%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C+%D8%B1%D9%88%DB%8C%DB%8C%D9%86+%D8%A7%D8%B3%D9%81%D8%B1%D8%A7%DB%8C%D9%86" target="_blank" rel="noopener">
+              <span class="contact-row-icon">⌖</span>
+              <span>
+                <small data-i18n="addressLabel">موقعیت</small>
+                <strong data-i18n="addressValue">روستای رویین، اسفراین</strong>
+              </span>
+            </a>
+
+          </div>
+
+          <div class="social-links" aria-label="Social media">
+            <a class="social-link" href="https://rubika.ir/" target="_blank" rel="noopener" aria-label="Rubika">R</a>
+            <a class="social-link" href="https://eitaa.com/" target="_blank" rel="noopener" aria-label="Eitaa">E</a>
+            <a class="social-link" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">T</a>
+            <a class="social-link" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          </div>
+        </div>
+
+        <form class="order-form reveal" id="orderForm">
+          <div class="form-heading">
+            <h3 data-i18n="formTitle">فرم درخواست چله‌پیچی</h3>
+            <p data-i18n="formDescription">اطلاعات اولیه را وارد کنید تا پیام سفارش آماده شود.</p>
+          </div>
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="customerName" data-i18n="nameLabel">نام شما</label>
+              <input id="customerName" name="name" type="text" autocomplete="name"
+                placeholder="نام و نام خانوادگی" data-i18n-placeholder="namePlaceholder" required>
+            </div>
+
+            <div class="field">
+              <label for="customerPhone" data-i18n="mobileLabel">شماره همراه</label>
+              <input id="customerPhone" name="phone" type="tel" inputmode="tel"
+                autocomplete="tel" placeholder="مثلاً 0915..." data-i18n-placeholder="mobilePlaceholder" required>
+            </div>
+
+            <div class="field">
+              <label for="yarnType" data-i18n="yarnLabel">نوع نخ</label>
+              <select id="yarnType" name="yarn" required>
+                <option value="" data-i18n="chooseYarn">انتخاب نوع نخ</option>
+                <option value="نخی" data-value-fa="نخی" data-value-en="Cotton" data-i18n="cottonOption">نخی</option>
+                <option value="مخمل" data-value-fa="مخمل" data-value-en="Velvet" data-i18n="velvetOption">مخمل</option>
+                <option value="نیاز به راهنمایی" data-value-fa="نیاز به راهنمایی" data-value-en="Need advice" data-i18n="helpOption">نیاز به راهنمایی دارم</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="quantity" data-i18n="quantityLabel">مقدار یا متراژ تقریبی</label>
+              <input id="quantity" name="quantity" type="text"
+                placeholder="مثلاً مقدار مورد نیاز" data-i18n-placeholder="quantityPlaceholder">
+            </div>
+
+            <div class="field full">
+              <label for="orderDetails" data-i18n="detailsLabel">توضیحات سفارش</label>
+              <textarea id="orderDetails" name="details"
+                placeholder="جزئیات سفارش، اندازه یا توضیح تکمیلی..." data-i18n-placeholder="detailsPlaceholder"></textarea>
+            </div>
+
+          </div>
+
+          <button class="btn btn-primary form-submit" type="submit">
+            <span data-i18n="submitOrder">آماده‌سازی پیام سفارش</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <p class="form-help" data-i18n="formHelp">
+            پس از زدن دکمه، پیام آماده می‌شود و برای ارسال در واتساپ باز خواهد شد.
+          </p>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section faq-section" id="faq">
+      <div class="container faq-grid">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow" data-i18n="faqEyebrow">پرسش‌های متداول</span>
+          <h2 class="section-title" data-i18n="faqTitle">
+            پاسخ چند پرسش <span class="gold-text">پیش از سفارش</span>
+          </h2>
+          <p class="section-description" data-i18n="faqDescription">
+            اگر سؤال دیگری دارید، از راه‌های ارتباطی همین صفحه با ما در میان بگذارید.
+          </p>
+        </div>
+
+        <div class="faq-list reveal">
+
+          <details>
+            <summary data-i18n="faqOneQ">چه نوع نخ‌هایی پذیرفته می‌شود؟</summary>
+            <p data-i18n="faqOneA">در حال حاضر خدمات چله‌پیچی برای نخ نخی و نخ مخمل ارائه می‌شود. جزئیات سفارش پیش از شروع هماهنگ می‌شود.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="faqTwoQ">برای ثبت سفارش چه اطلاعاتی لازم است؟</summary>
+            <p data-i18n="faqTwoA">نوع نخ، مقدار یا متراژ تقریبی و توضیحاتی که به آماده‌سازی سفارش کمک کند. اگر اطلاعات دقیق ندارید، ابتدا تماس بگیرید.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="faqThreeQ">چله‌پیچی چه تفاوتی با بافت دارد؟</summary>
+            <p data-i18n="faqThreeA">چله‌پیچی مرحله آماده‌سازی نخ‌های طولی و موازی است؛ بافت مرحله‌ای است که نخ‌های پود از میان نخ‌های چله عبور داده می‌شوند و پارچه شکل می‌گیرد.</p>
+          </details>
+
+          <details>
+            <summary data-i18n="faqFourQ">وصال کجا فعالیت می‌کند؟</summary>
+            <p data-i18n="faqFourA">وصال در روستای رویین، شهرستان اسفراین، استان خراسان شمالی فعالیت می‌کند.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a class="brand" href="#home">
+            <span class="brand-symbol">
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M5 8h22M5 16h22M5 24h22"></path>
+                <path d="M9 5v22M16 5v22M23 5v22"></path>
+                <path d="M5 8l4 4 7-8 7 8 4-4"></path>
+              </svg>
+            </span>
+            <span>
+              <span class="brand-name">وصال</span>
+              <span class="brand-caption" data-i18n="brandCaption">خدمات تخصصی چله‌پیچی</span>
+            </span>
+          </a>
+
+          <p class="footer-about" data-i18n="footerAbout">
+            خدمات چله‌پیچی نخ نخی و مخمل در روستای رویین، اسفراین؛
+            همراه شما برای آماده‌سازی منظم چله پیش از بافت.
+          </p>
+        </div>
+
+        <div>
+          <h4 data-i18n="footerQuick">دسترسی سریع</h4>
+          <div class="footer-links">
+            <a href="#about" data-i18n="navAbout">درباره ما</a>
+            <a href="#services" data-i18n="navServices">خدمات</a>
+            <a href="#process" data-i18n="navProcess">مراحل کار</a>
+            <a href="#gallery" data-i18n="navGallery">گالری</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 data-i18n="footerContact">راه‌های ارتباطی</h4>
+          <div class="footer-links">
+            <a href="tel:09155764756" data-i18n="footerCall">تماس تلفنی</a>
+            <a href="sms:09155764756" data-i18n="footerSms">ارسال پیامک</a>
+            <a href="https://wa.me/989155764756" target="_blank" rel="noopener">WhatsApp</a>
+            <span data-i18n="footerLocation">روستای رویین، اسفراین</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="copyright">© تمامی حقوق برای وصال محفوظ است.</span>
+        <span data-i18n="footerMade">ساخته‌شده با احترام به هنر نساجی</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE NAV ================= -->
+  <nav class="mobile-dock" aria-label="Mobile navigation">
+    <a class="dock-item" href="#home">
+      <span>⌂</span>
+      <span data-i18n="dockHome">خانه</span>
+    </a>
+    <a class="dock-item" href="#services">
+      <span>✳</span>
+      <span data-i18n="dockServices">خدمات</span>
+    </a>
+    <a class="dock-item" href="#gallery">
+      <span>▧</span>
+      <span data-i18n="dockGallery">گالری</span>
+    </a>
+    <a class="dock-item" href="#contact">
+      <span>✆</span>
+      <span data-i18n="dockContact">تماس</span>
+    </a>
+  </nav>
+
+  <!-- ================= LIGHTBOX ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <img id="lightboxImage" src="" alt="Gallery preview">
+  </div>
+
+  <script>
+    /* =========================================================
+       تنظیمات قابل تغییر سایت
+       شماره تماس و شناسه شبکه‌های اجتماعی را اینجا ویرایش کن.
+       ========================================================= */
+
+    const CONFIG = {
+      phone: "09155764756",
+
+      // شماره واتساپ با کد کشور و بدون صفر اول:
+      whatsapp: "989155764756",
+
+      // شناسه‌ها را بدون @ وارد کن.
+      // مثال: rubika: "vesal_page"
+      social: {
+        rubika: "",
+        eitaa: "",
+        telegram: "",
+        instagram: ""
+      }
+    };
+
+
+    /* =========================================================
+       ترجمه فارسی و انگلیسی
+       ========================================================= */
+
+    const translations = {
+      fa: {
+        brandCaption: "خدمات تخصصی چله‌پیچی",
+        navHome: "خانه",
+        navAbout: "درباره ما",
+        navServices: "خدمات",
+        navProcess: "مراحل کار",
+        navGallery: "گالری",
+        navContact: "ارتباط",
+        headerOrder: "ثبت سفارش",
+
+        heroBadge: "چله‌پیچی در روستای رویین، اسفراین",
+        heroTitle: 'آغاز یک بافت زیبا، <span>از چله‌ای منظم</span>',
+        heroDescription: "در وصال، چله‌پیچی نخ‌های نخی و مخمل با توجه به مشخصات سفارش شما انجام می‌شود؛ با تمرکز بر نظم نخ‌ها، کشش مناسب و آماده‌سازی دقیق برای مرحله بافت.",
+        heroCta: "سفارش چله‌پیچی",
+        heroMore: "آشنایی با مراحل کار",
+        heroBottom: "همراه شما از آماده‌سازی نخ تا تحویل چله",
+        heroCardTitle: "وصال؛ از رویین",
+        heroCardText: "خدمات چله‌پیچی برای فعالان حوزه حوله‌بافی",
+
+        trustOneTitle: "نخ نخی و مخمل",
+        trustOneText: "پذیرش سفارش با دو نوع نخ",
+        trustTwoTitle: "توجه به جزئیات",
+        trustTwoText: "نظم نخ‌ها و کنترل کشش",
+        trustThreeTitle: "روستای رویین",
+        trustThreeText: "اسفراین، خراسان شمالی",
+
+        stampTitle: "هنرِ نظم",
+        stampText: "پیش از بافت",
+        aboutEyebrow: "درباره وصال",
+        aboutTitle: 'هر بافت خوب، <span class="gold-text">از آماده‌سازی درست</span> شروع می‌شود.',
+        aboutText: "وصال در روستای رویینِ اسفراین فعالیت می‌کند و خدمات چله‌پیچی را برای افرادی ارائه می‌دهد که دستگاه حوله‌بافی دارند. هدف ما آماده‌سازی منظم نخ‌ها و هماهنگی دقیق سفارش، پیش از شروع مرحله بافت است.",
+        aboutTextTwo: "نوع نخ، مقدار مورد نیاز و جزئیات کار پیش از شروع با شما هماهنگ می‌شود تا سفارش بر اساس نیازتان آماده شود.",
+        aboutPointOne: "هماهنگی پیش از شروع کار",
+        aboutPointTwo: "توجه به نظم و کشش نخ",
+        aboutPointThree: "پذیرش نخ نخی",
+        aboutPointFour: "پذیرش نخ مخمل",
+
+        servicesEyebrow: "خدمات وصال",
+        servicesTitle: 'چله‌پیچی متناسب با <span class="gold-text">نوع نخ شما</span>',
+        servicesDescription: "در حال حاضر خدمات چله‌پیچی برای نخ‌های نخی و مخمل ارائه می‌شود. جزئیات هر سفارش پیش از شروع هماهنگ خواهد شد.",
+        cottonTitle: "چله‌پیچی نخ نخی",
+        cottonText: "آماده‌سازی چله با نخ نخی بر اساس مقدار، طول و مشخصات اعلام‌شده در سفارش؛ با توجه به قرارگیری منظم نخ‌های تار.",
+        cottonTag: "مناسب سفارش‌های نخ نخی",
+        velvetTitle: "چله‌پیچی نخ مخمل",
+        velvetText: "آماده‌سازی چله با نخ مخمل و توجه به مشخصات نخ و سفارش، برای تحویل چله‌ای آماده جهت ادامه مراحل بافت.",
+        velvetTag: "مناسب سفارش‌های نخ مخمل",
+
+        processEyebrow: "از نخ تا چله آماده",
+        processTitle: 'چله‌پیچی <span class="gold-text">چطور انجام می‌شود؟</span>',
+        processDescription: "چله، مجموعه نخ‌های طولی و موازی است که پایه و زیرساخت بافت را تشکیل می‌دهد. آماده‌سازی درست آن، پیش از شروع بافت اهمیت زیادی دارد.",
+        stepOneTitle: "بررسی سفارش و نخ",
+        stepOneText: "نوع نخ، مقدار، طول و مشخصات مورد نیاز با سفارش‌دهنده هماهنگ می‌شود.",
+        stepTwoTitle: "آماده‌سازی نخ‌ها",
+        stepTwoText: "نخ‌ها برای قرار گرفتن در مسیر چله آماده و وضعیت آن‌ها بررسی می‌شود.",
+        stepThreeTitle: "تنظیم و نظم‌دهی",
+        stepThreeText: "نخ‌های تار به‌صورت موازی و منظم چیده می‌شوند و کشش آن‌ها کنترل می‌شود.",
+        stepFourTitle: "پیچیدن و تحویل",
+        stepFourText: "چله روی نورد پیچیده و برای ادامه مراحل نصب و بافت آماده می‌شود.",
+        processExtra: "<strong>چله دقیقاً چه کاری انجام می‌دهد؟</strong> نخ‌های چله همان نخ‌های طولی پارچه هستند. هنگام بافت، نخ‌های پود از میان آن‌ها عبور می‌کنند و پارچه شکل می‌گیرد. به همین دلیل، موازی بودن نخ‌ها، نظم قرارگیری و کشش مناسب در آماده‌سازی چله اهمیت دارد.",
+
+        galleryEyebrow: "دنیای نخ و بافت",
+        galleryTitle: 'جزئیات زیبای <span class="gold-text">هنر نساجی</span>',
+        galleryDescription: "نگاهی به فضای بافت، تارهای کشیده‌شده و رنگ‌های چشم‌نواز نخ‌ها.",
+        galleryCta: "برای سفارش با ما تماس بگیرید",
+        galleryOne: "هنر دست و تارهای رنگی",
+        galleryTwo: "بافت حوله‌های سنتی",
+        galleryThree: "رنگ‌های متنوع نخ",
+        galleryFour: "دقت در فرایند بافت",
+        galleryFive: "بافت و نقش پارچه",
+        gallerySix: "تنوع رنگ و جنس نخ",
+        galleryNote: "توجه: این تصاویر برای نمایش فضای کلی نساجی و بافت انتخاب شده‌اند و عکس اختصاصی کارگاه وصال نیستند. برای معرفی دقیق‌تر کارگاه، بهتر است در آینده عکس‌های واقعی محل کار و نمونه سفارش‌ها جایگزین شوند.",
+
+        contactEyebrow: "ارتباط با وصال",
+        contactTitle: 'برای شروع یک همکاری، <span class="gold-text">با ما در تماس باشید.</span>',
+        contactDescription: "نوع نخ و مشخصات سفارش خود را ارسال کنید تا برای هماهنگی جزئیات چله‌پیچی با شما ارتباط بگیریم.",
+        phoneLabel: "شماره تماس",
+        smsLabel: "ارسال پیامک",
+        smsValue: "ارسال پیام",
+        whatsappValue: "گفت‌وگو در واتساپ",
+        addressLabel: "موقعیت",
+        addressValue: "روستای رویین، اسفراین",
+
+        formTitle: "فرم درخواست چله‌پیچی",
+        formDescription: "اطلاعات اولیه را وارد کنید تا پیام سفارش آماده شود.",
+        nameLabel: "نام شما",
+        namePlaceholder: "نام و نام خانوادگی",
+        mobileLabel: "شماره همراه",
+        mobilePlaceholder: "مثلاً 0915...",
+        yarnLabel: "نوع نخ",
+        chooseYarn: "انتخاب نوع نخ",
+        cottonOption: "نخی",
+        velvetOption: "مخمل",
+        helpOption: "نیاز به راهنمایی دارم",
+        quantityLabel: "مقدار یا متراژ تقریبی",
+        quantityPlaceholder: "مثلاً مقدار مورد نیاز",
+        detailsLabel: "توضیحات سفارش",
+        detailsPlaceholder: "جزئیات سفارش، اندازه یا توضیح تکمیلی...",
+        submitOrder: "آماده‌سازی پیام سفارش",
+        formHelp: "پس از زدن دکمه، پیام آماده می‌شود و برای ارسال در واتساپ باز خواهد شد.",
+
+        faqEyebrow: "پرسش‌های متداول",
+        faqTitle: 'پاسخ چند پرسش <span class="gold-text">پیش از سفارش</span>',
+        faqDescription: "اگر سؤال دیگری دارید، از راه‌های ارتباطی همین صفحه با ما در میان بگذارید.",
+        faqOneQ: "چه نوع نخ‌هایی پذیرفته می‌شود؟",
+        faqOneA: "در حال حاضر خدمات چله‌پیچی برای نخ نخی و نخ مخمل ارائه می‌شود. جزئیات سفارش پیش از شروع هماهنگ می‌شود.",
+        faqTwoQ: "برای ثبت سفارش چه اطلاعاتی لازم است؟",
+        faqTwoA: "نوع نخ، مقدار یا متراژ تقریبی و توضیحاتی که به آماده‌سازی سفارش کمک کند. اگر اطلاعات دقیق ندارید، ابتدا تماس بگیرید.",
+        faqThreeQ: "چله‌پیچی چه تفاوتی با بافت دارد؟",
+        faqThreeA: "چله‌پیچی مرحله آماده‌سازی نخ‌های طولی و موازی است؛ بافت مرحله‌ای است که نخ‌های پود از میان نخ‌های چله عبور داده می‌شوند و پارچه شکل می‌گیرد.",
+        faqFourQ: "وصال کجا فعالیت می‌کند؟",
+        faqFourA: "وصال در روستای رویین، شهرستان اسفراین، استان خراسان شمالی فعالیت می‌کند.",
+
+        footerAbout: "خدمات چله‌پیچی نخ نخی و مخمل در روستای رویین، اسفراین؛ همراه شما برای آماده‌سازی منظم چله پیش از بافت.",
+        footerQuick: "دسترسی سریع",
+        footerContact: "راه‌های ارتباطی",
+        footerCall: "تماس تلفنی",
+        footerSms: "ارسال پیامک",
+        footerLocation: "روستای رویین، اسفراین",
+        copyright: "© تمامی حقوق برای وصال محفوظ است.",
+        footerMade: "ساخته‌شده با احترام به هنر نساجی",
+
+        dockHome: "خانه",
+        dockServices: "خدمات",
+        dockGallery: "گالری",
+        dockContact: "تماس",
+
+        invalidForm: "لطفاً نام، شماره همراه و نوع نخ را وارد کنید.",
+        orderIntro: "سلام، برای خدمات چله‌پیچی وصال درخواست دارم.",
+        orderName: "نام",
+        orderPhone: "شماره همراه",
+        orderYarn: "نوع نخ",
+        orderQuantity: "مقدار یا متراژ",
+        orderDetails: "توضیحات",
+        themeLight: "روشن",
+        themeDark: "تاریک"
+      },
+
+      en: {
+        brandCaption: "Professional Warping Services",
+        navHome: "Home",
+        navAbout: "About",
+        navServices: "Services",
+        navProcess: "Our Process",
+        navGallery: "Gallery",
+        navContact: "Contact",
+        headerOrder: "Place an Order",
+
+        heroBadge: "Warping services in Royin, Esfarayen",
+        heroTitle: 'A beautiful weave <span>begins with a well-prepared warp.</span>',
+        heroDescription: "Vesal provides warping services for cotton and velvet yarn, with attention to yarn alignment, suitable tension and careful preparation before weaving.",
+        heroCta: "Request Warping",
+        heroMore: "Explore the Process",
+        heroBottom: "From yarn preparation to a ready warp",
+        heroCardTitle: "Vesal — Royin",
+        heroCardText: "Warping services for towel-weaving professionals",
+
+        trustOneTitle: "Cotton & Velvet",
+        trustOneText: "Two yarn types accepted",
+        trustTwoTitle: "Attention to Detail",
+        trustTwoText: "Yarn alignment and tension",
+        trustThreeTitle: "Royin Village",
+        trustThreeText: "Esfarayen, North Khorasan",
+
+        stampTitle: "The Art of Order",
+        stampText: "Before Weaving",
+        aboutEyebrow: "About Vesal",
+        aboutTitle: 'Every good weave <span class="gold-text">begins with careful preparation.</span>',
+        aboutText: "Based in Royin village, Esfarayen, Vesal provides warping services for people who own towel-weaving equipment. Our focus is on orderly yarn preparation and clear order coordination before weaving begins.",
+        aboutTextTwo: "Yarn type, required quantity and job details are discussed with you before work begins, so the order can be prepared according to your needs.",
+        aboutPointOne: "Coordination before work begins",
+        aboutPointTwo: "Attention to yarn alignment and tension",
+        aboutPointThree: "Cotton yarn accepted",
+        aboutPointFour: "Velvet yarn accepted",
+
+        servicesEyebrow: "Vesal Services",
+        servicesTitle: 'Warping suited to <span class="gold-text">your yarn type</span>',
+        servicesDescription: "We currently provide warping services for cotton and velvet yarn. Details are confirmed before each order begins.",
+        cottonTitle: "Cotton Yarn Warping",
+        cottonText: "Warp preparation with cotton yarn according to the quantity, length and specifications provided in your order, with attention to orderly warp alignment.",
+        cottonTag: "For cotton yarn orders",
+        velvetTitle: "Velvet Yarn Warping",
+        velvetText: "Warp preparation with velvet yarn, taking the yarn and order specifications into account, ready for the next stages of weaving.",
+        velvetTag: "For velvet yarn orders",
+
+        processEyebrow: "From Yarn to Ready Warp",
+        processTitle: 'How does <span class="gold-text">warping work?</span>',
+        processDescription: "The warp is a set of parallel lengthwise yarns that forms the foundation of the weave. Preparing it properly is an important step before weaving.",
+        stepOneTitle: "Order & Yarn Review",
+        stepOneText: "The yarn type, quantity, length and required specifications are discussed with the customer.",
+        stepTwoTitle: "Yarn Preparation",
+        stepTwoText: "The yarns are prepared for the warping path and their condition is checked.",
+        stepThreeTitle: "Alignment & Tension",
+        stepThreeText: "The warp yarns are arranged in parallel order and their tension is checked.",
+        stepFourTitle: "Winding & Handover",
+        stepFourText: "The warp is wound onto the beam and prepared for the following setup and weaving stages.",
+        processExtra: "<strong>What does the warp do?</strong> Warp yarns run lengthwise through the fabric. During weaving, weft yarns pass between them to form the cloth. That is why parallel alignment, orderly placement and suitable tension matter during warp preparation.",
+
+        galleryEyebrow: "The World of Yarn & Weaving",
+        galleryTitle: 'The beauty of <span class="gold-text">textile craftsmanship</span>',
+        galleryDescription: "A look at weaving spaces, stretched warp threads and the colors of yarn.",
+        galleryCta: "Contact Us to Place an Order",
+        galleryOne: "Handwork and colorful warp",
+        galleryTwo: "Traditional woven towels",
+        galleryThree: "A variety of yarn colors",
+        galleryFour: "Care in the weaving process",
+        galleryFive: "Fabric texture and pattern",
+        gallerySix: "Different yarn colors and textures",
+        galleryNote: "Please note: These images illustrate the wider world of textiles and weaving; they are not photographs of Vesal's own workshop. Actual workshop and order photos can be added later.",
+
+        contactEyebrow: "Contact Vesal",
+        contactTitle: 'Start a conversation <span class="gold-text">with our team.</span>',
+        contactDescription: "Send us your yarn type and order details so we can contact you to coordinate the warping requirements.",
+        phoneLabel: "Phone",
+        smsLabel: "Text message",
+        smsValue: "Send a message",
+        whatsappValue: "Chat on WhatsApp",
+        addressLabel: "Location",
+        addressValue: "Royin Village, Esfarayen",
+
+        formTitle: "Warping Request Form",
+        formDescription: "Enter some basic details to prepare your order message.",
+        nameLabel: "Your Name",
+        namePlaceholder: "Full name",
+        mobileLabel: "Mobile Number",
+        mobilePlaceholder: "e.g. 0915...",
+        yarnLabel: "Yarn Type",
+        chooseYarn: "Choose yarn type",
+        cottonOption: "Cotton",
+        velvetOption: "Velvet",
+        helpOption: "I need advice",
+        quantityLabel: "Approximate Quantity or Length",
+        quantityPlaceholder: "Enter the required amount",
+        detailsLabel: "Order Details",
+        detailsPlaceholder: "Order details, dimensions or other information...",
+        submitOrder: "Prepare Order Message",
+        formHelp: "After clicking, your message will be prepared and WhatsApp will open for sending.",
+
+        faqEyebrow: "Frequently Asked Questions",
+        faqTitle: 'A few things to know <span class="gold-text">before ordering</span>',
+        faqDescription: "For any other questions, please contact us using the details on this page.",
+        faqOneQ: "Which yarn types do you accept?",
+        faqOneA: "We currently provide warping services for cotton and velvet yarn. Order details are confirmed before work begins.",
+        faqTwoQ: "What information is needed to place an order?",
+        faqTwoA: "Please provide the yarn type, approximate quantity or length, and any details that may help with preparation. Contact us first if you are unsure.",
+        faqThreeQ: "How is warping different from weaving?",
+        faqThreeA: "Warping prepares the lengthwise parallel yarns. Weaving is the stage where weft yarns pass between the warp yarns to form the fabric.",
+        faqFourQ: "Where is Vesal located?",
+        faqFourA: "Vesal is based in Royin village, Esfarayen County, North Khorasan Province, Iran.",
+
+        footerAbout: "Cotton and velvet yarn warping services in Royin village, Esfarayen — preparing orderly warps before weaving.",
+        footerQuick: "Quick Links",
+        footerContact: "Contact",
+        footerCall: "Call us",
+        footerSms: "Send a text",
+        footerLocation: "Royin Village, Esfarayen",
+        copyright: "© All rights reserved by Vesal.",
+        footerMade: "Made with respect for textile craftsmanship",
+
+        dockHome: "Home",
+        dockServices: "Services",
+        dockGallery: "Gallery",
+        dockContact: "Contact",
+
+        invalidForm: "Please enter your name, mobile number and yarn type.",
+        orderIntro: "Hello, I would like to request warping services from Vesal.",
+        orderName: "Name",
+        orderPhone: "Mobile",
+        orderYarn: "Yarn type",
+        orderQuantity: "Quantity or length",
+        orderDetails: "Details",
+        themeLight: "Light",
+        themeDark: "Dark"
+      }
+    };
+
+
+    /* =========================================================
+       ابزارهای کمکی
+       ========================================================= */
+
+    const $ = (selector, parent = document) => parent.querySelector(selector);
+    const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+
+    function readStorage(key, fallback) {
+      try {
+        return localStorage.getItem(key) || fallback;
+      } catch (error) {
+        return fallback;
+      }
+    }
+
+    function saveStorage(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (error) {
+        // اگر ذخیره‌سازی در مرورگر بسته بود، سایت همچنان کار می‌کند.
+      }
+    }
+
+    let currentLanguage = readStorage("vesal.language", "fa");
+    let currentTheme = readStorage("vesal.theme", "dark");
+
+    if (!translations[currentLanguage]) currentLanguage = "fa";
+    if (!["dark", "light"].includes(currentTheme)) currentTheme = "dark";
+
+
+    /* =========================================================
+       تغییر زبان
+       ========================================================= */
+
+    function setLanguage(language) {
+      if (!translations[language]) return;
+
+      currentLanguage = language;
+      const dictionary = translations[language];
+
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "fa" ? "rtl" : "ltr";
+
+      $$("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        if (dictionary[key] !== undefined) {
+          element.innerHTML = dictionary[key];
+        }
+      });
+
+      $$("[data-i18n-placeholder]").forEach(element => {
+        const key = element.dataset.i18nPlaceholder;
+        if (dictionary[key] !== undefined) {
+          element.placeholder = dictionary[key];
+        }
+      });
+
+      $("#languageToggle").textContent = language === "fa" ? "EN" : "FA";
+
+      // متن گزینه‌های انتخاب نوع نخ را نیز تغییر می‌دهیم.
+      $$("#yarnType option[data-value-fa]").forEach(option => {
+        option.value = language === "fa"
+          ? option.dataset.valueFa
+          : option.dataset.valueEn;
+      });
+
+      saveStorage("vesal.language", language);
+      updateThemeButton();
+    }
+
+    $("#languageToggle").addEventListener("click", () => {
+      setLanguage(currentLanguage === "fa" ? "en" : "fa");
+    });
+
+
+    /* =========================================================
+       تغییر پوسته روشن و تاریک
+       ========================================================= */
+
+    function setTheme(theme) {
+      if (!["dark", "light"].includes(theme)) return;
+
+      currentTheme = theme;
+      document.documentElement.dataset.theme = theme;
+
+      const themeColor = theme === "dark" ? "#11151d" : "#f5f0e8";
+      $('meta[name="theme-color"]').setAttribute("content", themeColor);
+
+      saveStorage("vesal.theme", theme);
+      updateThemeButton();
+    }
+
+    function updateThemeButton() {
+      const icon = $("#themeIcon");
+
+      if (currentTheme === "dark") {
+        icon.innerHTML = `
+          <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path>
+        `;
+        $("#themeToggle").setAttribute(
+          "aria-label",
+          currentLanguage === "fa" ? "تغییر به حالت روشن" : "Switch to light mode"
+        );
+      } else {
+        icon.innerHTML = `
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+        `;
+        $("#themeToggle").setAttribute(
+          "aria-label",
+          currentLanguage === "fa" ? "تغییر به حالت تاریک" : "Switch to dark mode"
+        );
+      }
+    }
+
+    $("#themeToggle").addEventListener("click", () => {
+      setTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+
+
+    /* =========================================================
+       منوی موبایل
+       ========================================================= */
+
+    const mainNav = $("#mainNav");
+
+    $("#menuToggle").addEventListener("click", () => {
+      mainNav.classList.toggle("show");
+    });
+
+    $$("#mainNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("show");
+      });
+    });
+
+
+    /* =========================================================
+       شماره تماس و لینک‌های قابل تنظیم
+       ========================================================= */
+
+    function applyContactSettings() {
+      const cleanPhone = CONFIG.phone.replace(/[^\d+]/g, "");
+      const whatsappNumber = CONFIG.whatsapp.replace(/\D/g, "");
+
+      $("#phoneText").textContent = CONFIG.phone;
+      $("#phoneLink").href = `tel:${cleanPhone}`;
+      $("#smsLink").href = `sms:${cleanPhone}`;
+      $("#whatsappLink").href = `https://wa.me/${whatsappNumber}`;
+
+      // لینک شبکه‌های اجتماعی:
+      // اگر شناسه وارد شده باشد، مستقیم به صفحه همان حساب می‌رود.
+      const socialLinks = $$(".social-link");
+      const socialKeys = ["rubika", "eitaa", "telegram", "instagram"];
+      const socialBases = {
+        rubika: "https://rubika.ir/",
+        eitaa: "https://eitaa.com/",
+        telegram: "https://t.me/",
+        instagram: "https://instagram.com/"
+      };
+
+      socialLinks.forEach((link, index) => {
+        const key = socialKeys[index];
+        const account = CONFIG.social[key];
+
+        link.href = account
+          ? socialBases[key] + account.replace(/^@/, "")
+          : socialBases[key];
+      });
+    }
+
+
+    /* =========================================================
+       فرم سفارش — باز کردن پیام آماده در واتساپ
+       ========================================================= */
+
+    $("#orderForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = $("#customerName").value.trim();
+      const phone = $("#customerPhone").value.trim();
+      const yarn = $("#yarnType").value;
+      const quantity = $("#quantity").value.trim();
+      const details = $("#orderDetails").value.trim();
+
+      const t = translations[currentLanguage];
+
+      if (!name || !phone || !yarn) {
+        alert(t.invalidForm);
+        return;
+      }
+
+      const lines = [
+        t.orderIntro,
+        "",
+        `${t.orderName}: ${name}`,
+        `${t.orderPhone}: ${phone}`,
+        `${t.orderYarn}: ${yarn}`,
+        quantity ? `${t.orderQuantity}: ${quantity}` : "",
+        details ? `${t.orderDetails}: ${details}` : ""
+      ].filter(Boolean);
+
+      const message = encodeURIComponent(lines.join("\n"));
+      const number = CONFIG.whatsapp.replace(/\D/g, "");
+
+      window.open(`https://wa.me/${number}?text=${message}`, "_blank", "noopener");
+    });
+
+
+    /* =========================================================
+       گالری و نمایش بزرگ تصاویر
+       ========================================================= */
+
+    const lightbox = $("#lightbox");
+    const lightboxImage = $("#lightboxImage");
+
+    $$(".gallery-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const image = $("img", item);
+        const fullImage = item.dataset.full || image.src;
+
+        lightboxImage.src = fullImage;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    $("#lightboxClose").addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+
+    /* =========================================================
+       انیمیشن ورود بخش‌ها هنگام اسکرول
+       ========================================================= */
+
+    const revealElements = $$(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12
+      });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => element.classList.add("visible"));
+    }
+
+
+    /* =========================================================
+       اجرای تنظیمات اولیه
+       ========================================================= */
+
+    setTheme(currentTheme);
+    setLanguage(currentLanguage);
+    applyContactSettings();
+  </script>
+
+</body>
+</html>
