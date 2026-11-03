@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Telegram Mini App SDK: required when this page is opened from the bot keyboard -->
+  <script src="https://telegram.org/js/telegram-web-app.js?64"></script>
+
   <style>
     /* =========================================================
        VESAL — WARPING STUDIO
@@ -2493,10 +2496,25 @@
       social: {
         rubika: "",
         eitaa: "",
-        telegram: "",
+        telegram: "shop_handicraft_bot",
         instagram: ""
       }
     };
+
+    // اتصال این سایت به ربات رسمی وصال در تلگرام.
+    const TELEGRAM_BOT_URL = "https://t.me/shop_handicraft_bot";
+    const TELEGRAM_WEB_APP = window.Telegram?.WebApp || null;
+
+    if (TELEGRAM_WEB_APP) {
+      TELEGRAM_WEB_APP.ready();
+      TELEGRAM_WEB_APP.expand();
+      try {
+        TELEGRAM_WEB_APP.setHeaderColor("#11151d");
+        TELEGRAM_WEB_APP.setBackgroundColor("#11151d");
+      } catch (error) {
+        console.debug("Telegram theme colors are unavailable in this client.");
+      }
+    }
 
 
     /* =========================================================
@@ -2601,8 +2619,8 @@
         quantityPlaceholder: "مثلاً مقدار مورد نیاز",
         detailsLabel: "توضیحات سفارش",
         detailsPlaceholder: "جزئیات سفارش، اندازه یا توضیح تکمیلی...",
-        submitOrder: "آماده‌سازی پیام سفارش",
-        formHelp: "پس از زدن دکمه، پیام آماده می‌شود و برای ارسال در واتساپ باز خواهد شد.",
+        submitOrder: "ارسال درخواست سفارش",
+        formHelp: "اگر سایت را از داخل ربات تلگرام باز کرده باشی، درخواست مستقیم به ربات وصال می‌رسد؛ در مرورگر عادی واتساپ باز می‌شود.",
 
         faqEyebrow: "پرسش‌های متداول",
         faqTitle: 'پاسخ چند پرسش <span class="gold-text">پیش از سفارش</span>',
@@ -2738,8 +2756,8 @@
         quantityPlaceholder: "Enter the required amount",
         detailsLabel: "Order Details",
         detailsPlaceholder: "Order details, dimensions or other information...",
-        submitOrder: "Prepare Order Message",
-        formHelp: "After clicking, your message will be prepared and WhatsApp will open for sending.",
+        submitOrder: "Send Order Request",
+        formHelp: "When opened from the Telegram bot, your request is sent directly to Vesal; in a normal browser, WhatsApp opens.",
 
         faqEyebrow: "Frequently Asked Questions",
         faqTitle: 'A few things to know <span class="gold-text">before ordering</span>',
@@ -2953,7 +2971,7 @@
 
 
     /* =========================================================
-       فرم سفارش — باز کردن پیام آماده در واتساپ
+       ثبت درخواست چله‌پیچی — Telegram Mini App + WhatsApp fallback
        ========================================================= */
 
     $("#orderForm").addEventListener("submit", event => {
@@ -2964,7 +2982,6 @@
       const yarn = $("#yarnType").value;
       const quantity = $("#quantity").value.trim();
       const details = $("#orderDetails").value.trim();
-
       const t = translations[currentLanguage];
 
       if (!name || !phone || !yarn) {
@@ -2972,6 +2989,41 @@
         return;
       }
 
+      // When launched from the bot's Web App keyboard button,
+      // sendData delivers this request to main.py as web_app_data.
+      if (TELEGRAM_WEB_APP && TELEGRAM_WEB_APP.initData && typeof TELEGRAM_WEB_APP.sendData === "function") {
+        const requestPayload = {
+          type: "vesal_warping_order",
+          version: 1,
+          name,
+          phone,
+          yarn,
+          quantity,
+          details,
+          language: currentLanguage
+        };
+
+        const serialized = JSON.stringify(requestPayload);
+        if (new Blob([serialized]).size > 3900) {
+          alert(currentLanguage === "fa"
+            ? "توضیحات سفارش بیش از حد طولانی است. لطفاً کوتاه‌تر بنویسید."
+            : "The order details are too long. Please shorten them.");
+          return;
+        }
+
+        try {
+          TELEGRAM_WEB_APP.sendData(serialized);
+          return;
+        } catch (error) {
+          console.error("Telegram WebApp sendData failed:", error);
+          alert(currentLanguage === "fa"
+            ? "ارسال به ربات تلگرام انجام نشد. لطفاً دوباره تلاش کنید."
+            : "Could not send the request to Telegram. Please try again.");
+          return;
+        }
+      }
+
+      // Outside Telegram, keep the existing WhatsApp order flow.
       const lines = [
         t.orderIntro,
         "",
@@ -2984,7 +3036,6 @@
 
       const message = encodeURIComponent(lines.join("\n"));
       const number = CONFIG.whatsapp.replace(/\D/g, "");
-
       window.open(`https://wa.me/${number}?text=${message}`, "_blank", "noopener");
     });
 
